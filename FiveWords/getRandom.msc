@@ -1,0 +1,29 @@
+@using FiveWords
+
+# Create a new array of 1000 random words if it is empty
+@if fiveShuffle.length() < 1
+    @var fiveList1.shuffle()
+    @var fiveList2.shuffle()
+    @var fiveList3.shuffle()
+    @define Int aIx = 0
+    @define Int bIx = 0
+    @define Int cIx = 0
+
+    @for Int n in list::range(0, 1000)
+        @if n % 3 == 0
+            @var fiveShuffle.append(fiveList1[aIx])
+            @var aIx = aIx + 1
+        @elseif n % 3 == 1
+            @var fiveShuffle.append(fiveList2[bIx])
+            @var bIx = bIx + 1
+        @else 
+            @var fiveShuffle.append(fiveList3[cIx])
+            @var cIx = cIx + 1
+        @fi
+    @done 
+
+    @var fiveShuffle.shuffle()
+@fi
+
+# Pop out a new word and return it!
+@return fiveShuffle.pop()
