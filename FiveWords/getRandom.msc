@@ -1,3 +1,3 @@
 @using FiveWords
 
-@return wordList[Int(math::random(0.0D, 2000.0D))]
+@return wordList[Int(math::random(0.0D, 2413.999D))]
